@@ -1,23 +1,40 @@
-# Compiled class file
-*.class
+/*
+ *  UCF COP3330 Fall 2021 Assignment 19 Solution
+ *  Copyright 2021 Hamza Iqbal
+ */
 
-# Log file
-*.log
 
-# BlueJ files
-*.ctxt
+import java.util.*;
+import java.lang.*;
+import java.io.*;
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+public class Main
+{
+   public static void main (String[] args) throws java.lang.Exception
+   {
 
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
+       Scanner sc=new Scanner(System.in);
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+       System.out.println("Enter the Height in Inches- ");
+       double height = sc.nextDouble();
+       System.out.println("Enter the weight in pounds- ");
+       double weight = sc.nextDouble();
+
+
+
+       double BMI = (weight / (height * height)) * 703;
+
+       System.out.println("Your BMI is " + String.format("%.2f",BMI));
+
+
+       if(BMI >= 18.5 && BMI <= 25){
+       System.out.println("You are within the ideal weight range");
+       }
+       else if(BMI >25){
+       System.out.println("You are overweight. You should see your doctor");
+       }
+       else if(BMI < 18.5){
+       System.out.println("You are underweight. You should see your doctor");
+       }
+   }
+}
